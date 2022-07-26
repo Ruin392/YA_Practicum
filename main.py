@@ -1,142 +1,49 @@
-# friends_names = ['Аня', 'Коля', 'Лёша', 'Лена', 'Миша']
-# friends_cities = ['Владивосток', 'Красноярск', 'Москва', 'Обнинск', 'Чебоксары']
-#
-# # Объявлен пустой словарь, его нужно будет наполнить элементами,
-# # каждый из которых составлен по схеме "имя: город"
-# friends =  {}
-#
-# # Допишите ваш код сюда
-# for i in range(0, len(friends_names)):
-#     friends[friends_names[i]]=friends_cities[i]
-# print('Лена живёт в городе ' + friends['Лена'])
+DATABASE = {
+    'Серёга': 'Омск',
+    'Соня': 'Москва',
+    'Миша': 'Москва',
+    'Дима': 'Челябинск',
+    'Алина': 'Красноярск',
+    'Егор': 'Пермь',
+    'Коля': 'Красноярск'
+}
 
-# friends =  {
-#     'Серёга': 'Омск',
-#     'Соня': 'Москва',
-#     'Дима': 'Челябинск',
-#     'Айгуль': 'Казань',
-#     'Алёна': 'Белгород',
-#     'Даниил': 'Санкт-Петербург',
-#     'Лев': 'Тула',
-#     'Валера': 'Сыктывкар',
-#     'Антон': 'Ялта',
-#     'Карен': 'Краснодар'
-# }
-#
-# for name,city in friends.items():
-#     print( name,'живёт в городе',city)
-# favorite_songs = {
-#     'Серёга': ['Unforgiven', 'Holiday', 'Highway to hell'],
-#     'Соня': ['Shake it out', 'The Show Must Go On', 'Наше лето'],
-#     'Дима': ['Владимирский централ', 'Мурка', 'Третье сентября']
-# }
-#
-# print(len(favorite_songs['Дима']))
-# for i in favorite_songs['Соня']:
-#     print(i)
+# Новая функция, она возвращает правильное словосочетание, склоняя слово "друзья"
+# в зависимости от того, какое число передано в аргументе friends_count
+def format_friends_count(friends_count):
+    if friends_count == 1:
+        return '1 друг'
+    elif 2 <= friends_count <= 4:
+        return f'{friends_count} друга'
+    else:
+        return f'{friends_count} друзей'
 
-# playlist = {
-#     'Venus',
-#     'Yesterday',
-#     'Fireball',
-#     'Time',
-#     'Poison',
-#     'Thunderstruck'
-# }
-# new_music = [
-#     'Kashmir',
-#     'Smoke on the Water',
-#     'Bohemian Rhapsody',
-#     'Zombie',
-#     'Let It Be',
-#     'Its My Life',
-# ]
-# for i in new_music:
-#     playlist.add(i)
-#
-# print(playlist)
 
-# friends = {
-#     'Серёга': 'Омск',
-#     'Соня': 'Москва',
-#     'Дима': 'Челябинск',
-#     'Алина': 'Хабаровск',
-#     'Егор': 'Пермь'
-# }
-#
-#
-# def is_anyone_in(collection, city):
-#     for friend in collection:
-#         if collection[friend] == city:
-#             print('В городе',city, 'живёт',friend, 'Обязательно зайду в гости!')
-#         else:
-#             print('В городе', collection[friend], 'у меня есть друг, но мне туда не надо.')
-#
-#
-# is_anyone_in(friends, 'Хабаровск')
-#
-# DATABASE = {
-#     'Серёга': 'Омск',
-#     'Соня': 'Москва',
-#     'Миша': 'Москва',
-#     'Дима': 'Челябинск',
-#     'Алина': 'Красноярск',
-#     'Егор': 'Пермь',
-#     'Коля': 'Красноярск'
-# }
-#
-# def process_anfisa(query):
-#     if query == 'Сколько у меня друзей?':
-#         count = len(DATABASE)
-#         return 'У тебя ' + str(count) + ' друзей.'
-#     # Здесь проверьте, что переменная query равна строке 'Кто все мои друзья?'
-#     elif query == 'Кто все мои друзья?':
-#         friends_string = ''
-#         friends_string += str('Твои друзья: ')
-#         # Чтобы получить перечень друзей -
-#         # переберите словарь DATABASE в цикле
-#         for i in DATABASE:
-#             friends_string += str(i) + str(' ')
-#         return(friends_string)
-#     elif query == 'Где все мои друзья?':
-#         friends_city = 'Твои друзья в городах: '
-#         for city in set(DATABASE.values()):
-#             friends_city += city + str(' ')
-#         return (friends_city)
-#
-#
-# # Не изменяйте следующий код
-# print('Привет, я Анфиса!')
-# print(process_anfisa('Сколько у меня друзей?'))
-# print(process_anfisa('Кто все мои друзья?'))
-# print(process_anfisa('Где все мои друзья?'))
-# DATABASE = {
-#     'Серёга': 'Омск',
-#     'Соня': 'Москва',
-#     'Миша': 'Москва',
-#     'Дима': 'Челябинск',
-#     'Алина': 'Красноярск',
-#     'Егор': 'Пермь',
-#     'Коля': 'Красноярск'
-# }
-#
-#
-# def process_anfisa(query):
-#     if query == 'Сколько у меня друзей?':
-#         count = len(DATABASE)
-#
-#         return 'У тебя ' + str(count) + ' друзей.'
-#     elif query == 'Кто все мои друзья?':
-#         # Из словаря DATABASE создайте строку с помощью join();
-#         # имена друзей разделите запятой и пробелом.
-#         friends_string = ', '.join(DATABASE)
-#         return 'Твои друзья: ' + friends_string
-#     elif query == 'Где все мои друзья?':
-#         unique_cities = set(DATABASE.values())
-#         city = ', '.join(unique_cities)
-#         return 'Твои друзья в городах: '+ city
-#
-#         # Из сета unique_cities создайте строку с помощью join();
-#         # названия городов разделите запятой и пробелом.
-# print(process_anfisa('Кто все мои друзья?'))
+def process_anfisa(query):
+    print(query)
+    if query == 'сколько у меня друзей?':
+        count = len(DATABASE)
+        return f'У тебя {format_friends_count(count)}.'
+    elif query == 'кто все мои друзья?':
+        friends_string = ', '.join(DATABASE)
+        return f'Твои друзья: {friends_string}'
+    elif query == 'где все мои друзья?':
+        unique_cities = set(DATABASE.values())
+        cities_string = ', '.join(unique_cities)
+        return f'Твои друзья в городах: {cities_string}'
+    else:
+        return '<неизвестный запрос>'
+
+def process_query(query):
+    search_name = query.split(',')[0]
+    question = query.split(',')[1].strip()
+    if search_name == 'Анфиса':
+        return (process_anfisa(str(question)))
+
+print('Привет, я Анфиса!')
+print(process_query('Анфиса, сколько у меня друзей?'))
+print(process_query('Анфиса, кто все мои друзья?'))
+print(process_query('Анфиса, где все мои друзья?'))
+print(process_query('Анфиса, кто виноват?'))
+print(process_query('Соня, ты где?'))
 
