@@ -140,3 +140,132 @@
 #         # названия городов разделите запятой и пробелом.
 # print(process_anfisa('Кто все мои друзья?'))
 
+# def show_meteo(temperature, weather):
+#     print(f'Сейчас {weather}, на градуснике {temperature}.')
+# show_meteo(24, 'облачно')
+
+
+# n = int(6953265490845412370018)
+# max_digit = -1
+# not_del_3 = []
+# for i in str(n):
+#
+#     digit = int(i) % 10
+#     if digit % 3 == 0 and digit > max_digit:
+#         max_digit = digit
+#     else:
+#         not_del_3.append(digit)
+#
+# if len(str(n)) == len(not_del_3):
+#     print('NO')
+# else:
+#     print(max_digit)
+#
+# a = int(input())
+# i = 1
+# while i <= a:
+#     for j in range(1, 10):
+#         b = i + j
+#         print(f'{i} + {j} = {b}')
+#     print()
+#     i += 1
+
+# n = 5
+#
+# for i in range(1,n+1):
+#    if i <= n//2+1:
+#       for j in range(i):
+#          print('*',end='')
+#    elif i >n//2+1:
+#       for j in range(0,n-i+1):
+#          print('*',end='')
+#    print()
+# a = int(input())
+# res = []
+# res.append(a)
+# for i in range(0, a):
+#     b = int(input())
+#     res.append(b)
+# print(sorted(set(res), reverse=True)[0])
+# print(sorted(set(res), reverse=True)[1])
+
+
+
+
+# for
+# res = []
+# for i in a:
+#     res.append(i)
+# print(sorted(set(res), reverse=True)[0])
+# print(sorted(set(res), reverse=True)[1])
+# enter = 0
+# d_d = 0
+# while enter != 10:
+#     a = int(input())
+#     if a % 2 == 0:
+#         d_d += 1
+#     enter +=1
+# if d_d == enter:
+#     print('YES')
+# else:
+#     print('NO')
+# n = 0
+# k = 0
+# m = 0
+# while n != 1 and k!=4 and m!=7:
+#     for n in range(1, 29):
+#         for k in range(1, 31):
+#             for m in range(1, 32):
+#                 if 28*n + 30*k + 31*m == 365:
+#                     print(f'n = {n} k = {k} m = {m}')
+#         break
+
+
+# p = [x ** 5 for x in range(151)]
+# pw = set(p)
+# for a in range(1, 151):
+#     for b in range(a, 151):
+#         for c in range(b, 151):
+#             for d in range(c, 151):
+#                 s = p[a] + p[b] + p[c] + p[d]
+#                 if s in pw:
+#                     print(a, b, c, d, p.index(s))
+#                     print(a + b + c + d + p.index(s))
+
+import sqlite3
+
+
+connector =  sqlite3.connect('db_ya.sqlite')
+cur = connector.cursor()
+#
+# directors = [
+#     (1, 'Текс Эйвери',1908),
+#     (2, " Роберт Земякис", 1952),
+#     (3, "Джерри Чинникей", 1912),
+# ]
+# movies = [
+#     (2, 'Веселые мелоднии', "Мультсериал",1930 ),
+#     (3, "Кто подставил кролика Роджера", "Фильм", 1988),
+#     (4, "Безумные мелодии Луни Тюнз", "Мультсериал",1931),
+#     (5, "Розовая Пантера: Контроль за вредителями", "Мультфильм", 1969),
+#
+# ]
+# cur.executemany('INSERT INTO directors VALUES(?, ?, ?);', directors)
+# cur.executemany('INSERT INTO movies VALUES(?, ?, ?, ?);', movies)
+cur.execute('''
+SELECT name,
+       release_year
+FROM movies
+WHERE release_year > 1980;
+''')
+for result in cur:
+    print(result)
+
+
+
+# Применяем запросы.
+# Запросы, переданные в cur.execute(), не будут выполнены до тех пор,
+# пока не вызван метод commit().
+connector.commit()
+# Закрываем соединение с БД.
+connector.close()
