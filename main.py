@@ -232,40 +232,267 @@
 #                     print(a, b, c, d, p.index(s))
 #                     print(a + b + c + d + p.index(s))
 
-import sqlite3
-
-
-connector =  sqlite3.connect('db_ya.sqlite')
-cur = connector.cursor()
+# import sqlite3
 #
-# directors = [
-#     (1, 'Текс Эйвери',1908),
-#     (2, " Роберт Земякис", 1952),
-#     (3, "Джерри Чинникей", 1912),
-# ]
-# movies = [
-#     (2, 'Веселые мелоднии', "Мультсериал",1930 ),
-#     (3, "Кто подставил кролика Роджера", "Фильм", 1988),
-#     (4, "Безумные мелодии Луни Тюнз", "Мультсериал",1931),
-#     (5, "Розовая Пантера: Контроль за вредителями", "Мультфильм", 1969),
+# con = sqlite3.connect('db.sqlite')
+# cur = con.cursor()
 #
-# ]
-# cur.executemany('INSERT INTO directors VALUES(?, ?, ?);', directors)
-# cur.executemany('INSERT INTO movies VALUES(?, ?, ?, ?);', movies)
-cur.execute('''
-SELECT name,
-       release_year
-FROM movies
-WHERE release_year > 1980;
-''')
-for result in cur:
-    print(result)
+# cur.execute('''
+# SELECT movies.name,
+#        slogans.name,
+#        types.name
+# FROM movies
+# JOIN slogans ON movies.slogan_id = slogans.id
+# JOIN types ON movies.type_id = types.id;
+#
+# ''')
+#
+#
+#
+# for result in cur:
+#     print(result)
+# con.commit()
+# con.close()
+# def print_text(text, num):
+#     while num > 0:
+#         print(text, end='')
+#         num -= 1
+#
+# print_text('Python', 4)
+
+# def draw_triangle(fill, base):
+#     for i in range(1, base + 1):
+#         if i <= base // 2 + 1:
+#             for j in range(i):
+#                 print(fill, end='')
+#         elif i > base // 2 + 1:
+#             for j in range(0, base - i + 1):
+#                 print(fill, end='')
+#         print()
+# fill = input()
+# base = int(input())
+# draw_triangle(fill, base)
 
 
+# # объявление функции
+# def get_factors(num):
+#     c = 0
+#     for i in range(1,num+1):
+#         if num % i == 0:
+#             c +=1
+#     return c
+#
+# # считываем данные
+# n = int(input())
+#
+# # вызываем функцию
+# print(get_factors(n))
 
-# Применяем запросы.
-# Запросы, переданные в cur.execute(), не будут выполнены до тех пор,
-# пока не вызван метод commit().
-connector.commit()
-# Закрываем соединение с БД.
-connector.close()
+# class Contact:
+#     def __init__(self, name, phone, address, birthday):
+#         self.name = name
+#         self.phone = phone
+#         self.address = address
+#         self.birthday = birthday
+#         print(f"Создаём новый контакт {name}")
+#
+#
+# # здесь создайте объекты mike и vlad
+# mike = Contact('Михаил Булгаков', '2-03-27', 'Россия, Москва, Большая Пироговская, дом 35б, кв. 6', '15.05.1891')
+# vlad = Contact('Владимир Маяковский', '73-88', 'Россия, Москва, Лубянский проезд, д. 3, кв. 12', '19.07.1893')
+#
+#
+# def print_contact():
+#     print(f"{mike.name} — адрес: {mike.address}, телефон: {mike.phone}, день рождения: {mike.birthday}")
+#     print(f"{vlad.name} — адрес: {vlad.address}, телефон: {vlad.phone}, день рождения: {vlad.birthday}")
+#
+# # здесь вызовите функцию print_contact(),
+# print_contact()
+# # и она напечатает на экране данные контактов mike и vlad
+# class Contact:
+#     def __init__(self, name, phone, birthday, address):
+#         self.name = name
+#         self.phone = phone
+#         self.birthday = birthday
+#         self.address = address
+#         print(f"Создаём новый контакт {name}")
+#
+#
+# mike = Contact("Михаил Булгаков", "2-03-27", "15.05.1891", "Россия, Москва, Большая Пироговская, дом 35б, кв. 6")
+# vlad = Contact("Владимир Маяковский", "73-88", "19.07.1893", "Россия, Москва, Лубянский проезд, д. 3, кв. 12")
+#
+#
+# def print_contact():
+#     print(f"{mike.name} — адрес: {mike.address}, телефон: {mike.phone}, день рождения: {mike.birthday}")
+#     print(f"{vlad.name} — адрес: {vlad.address}, телефон: {vlad.phone}, день рождения: {vlad.birthday}")
+#
+#
+# # здесь измените адрес для объекта mike
+# mike.address = 'Россия, Москва, Нащокинский переулок, дом 3, кв. 44'
+# # здесь измените телефон для объекта mike
+# mike.phone = 'К-058-67'
+#
+# # здесь измените адрес для объекта vlad
+# vlad.address = 'Россия, Москва, Гендриков переулок, дом 15, кв. 5'
+# # здесь измените телефон для объекта vlad
+# vlad.phone = '2-35-71'
+#
+# print_contact()  # выводим данные на экран
+# class Contact:
+#     def __init__(self, name, phone, birthday, address):
+#         self.name = name
+#         self.phone = phone
+#         self.birthday = birthday
+#         self.address = address
+#         print(f"Создаём новый контакт {name}")
+#     def show_contact(self):
+#         print(f"{self.name} — адрес: {self.address}, телефон: {self.phone}, день рождения: {self.birthday}")
+#
+#     # def __str__(self):
+#
+#
+#
+# mike = Contact("Михаил Булгаков", "2-03-27", "15.05.1891", "Россия, Москва, Большая Пироговская, дом 35б, кв. 6")
+# vlad = Contact("Владимир Маяковский", "73-88", "19.07.1893", "Россия, Москва, Лубянский проезд, д. 3, кв. 12")
+#
+# mike.show_contact()
+# vlad.show_contact()
+
+# импортируйте библиотеку math
+# import math
+#
+# class Planet:
+#     def __init__(self, name, radius, temp_celsius):
+#         self.name = name
+#         self.surface_area = 4 * math.pi * radius**2
+#         self.average_temp_celsius = temp_celsius
+#         self.average_temp_fahrenheit = (temp_celsius * 9/5) + 32
+#
+#     def show_info(self):
+#         print(f"Планета {self.name} имеет площадь поверхности {self.surface_area} кв.км.")
+#         print(f"Средняя температура поверхности планеты: {self.average_temp_fahrenheit} по Фаренгейту.")
+#
+#
+# jupiter = Planet('Юпитер', 69911, -108)
+# # вызовите метод show_info для Юпитера
+# jupiter.show_info()
+
+# импортируем функции из библиотеки math для рассчёта расстояния
+# from math import radians, sin, cos, acos
+#
+#
+# class Point:
+#     def __init__(self, latitude, longitude):
+#         self.latitude = radians(latitude)
+#         self.longitude = radians(longitude)
+#
+#     # считаем расстояние между двумя точками в км
+#     def distance(self, other):
+#         cos_d = sin(self.latitude) * sin(other.latitude) + cos(self.latitude) * cos(other.latitude) * cos(
+#         self.longitude - other.longitude)
+#
+#         return 6371 * acos(cos_d)
+#
+#
+# class City(Point):
+#     def __init__(self, latitude, longitude, name, population):
+#         super().__init__(latitude, longitude)
+#         # допишите код: сохраните свойства родителя
+#         # и добавьте свойства name и population
+#         self.name = name
+#         self.population = population
+#
+#     def show(self):
+#         print(f"Город {self.name}, население {self.population} чел.")
+#
+#
+# class Mountain(Point):
+#     def __init__(self, latitude, longitude, name, height):
+#         super().__init__(latitude, longitude)
+#         self.name = name
+#         self.height = height
+#     # допишите код: напишите конструктор, в нём сохраните свойства родителя
+#     # и добавьте свойства name и height
+#
+#     def show(self):
+#         print(f'Высота горы {self.name} - {self.height} м.')
+#     # Создайте метод show(self):
+#     # информацию о горе нужно вывести в формате:
+#     # "Высота горы <название> - <высота> м."
+#
+#
+# # эта функция печатает расстояние
+# # между двумя любыми наследниками класса Point
+# def print_how_far(geo_object_1, geo_object_2):
+#     print(f'От точки «{geo_object_1.name}» до точки «{geo_object_2.name}» — {geo_object_1.distance(geo_object_2)} км.')
+#
+#
+# # основной код
+# moscow = City(55.7522200, 37.6155600, 'Москва', 12615882)
+# everest = Mountain(27.98791, 86.92529, 'Эверест', 8848)
+# chelyabinsk = City(55.154, 61.4291, 'Челябинск', 1200703)
+#
+# moscow.show()
+# everest.show()
+# print_how_far(moscow, everest)
+# # print_how_far(moscow, chelyabinsk)
+# class Human:
+#     def __init__(self, name):
+#         self.name = name
+#
+#     # ответ по умолчанию для всех одинаковый, можно
+#     # доверить его родительскому классу
+#     def answer_question(self, question):
+#         print('Очень интересный вопрос! Не знаю.')
+#
+# class Student(Human):
+#     #  метод ask_question() принимает параметр someone:
+#     #  это объект, экземпляр класса Curator, Mentor или CodeReviewer,
+#     #  которому Student задаёт вопрос;
+#     #  параметр question — это просто строка
+#     #  имя объекта и текст вопроса задаются при вызове метода ask_question
+#     def ask_question(self, someone, question):
+#         # напечатайте на экран вопрос в нужном формате
+#         print(f'{someone.name}, {question}')
+#         someone.answer_question(question)
+#
+#         print()  # этот print выводит разделительную пустую строку
+#
+#
+# class Curator(Human):
+#     def answer_question(self, question):
+#         if question == 'мне грустненько, что делать?':
+#             print('Держись, всё получится. Хочешь видео с котиками?')
+#         else:
+#             super().answer_question(question)
+#
+# class Mentor(Human):
+#     def answer_question(self, question):
+#         if question == 'мне грустненько, что делать?':
+#             print('Отдохни и возвращайся с вопросами по теории.')
+#         elif question == 'как устроиться работать питонистом?':
+#             print('Сейчас расскажу. ')
+#         else:
+#             super().answer_question(question)
+#
+# class CodeReviewer(Human):
+#     def answer_question(self, question):
+#         if question == 'что не так с моим проектом?':
+#             print('О, вопрос про проект, это я люблю.')
+#         else:
+#             super().answer_question(question)
+
+
+# # следующий код менять не нужно, он работает, мы проверяли
+# student1 = Student('Тимофей')
+# curator = Curator('Марина')
+# mentor = Mentor('Ира')
+# reviewer = CodeReviewer('Евгений')
+# friend = Human('Виталя')
+#
+# student1.ask_question(curator, 'мне грустненько, что делать?')
+# student1.ask_question(mentor, 'мне грустненько, что делать?')
+# student1.ask_question(reviewer, 'когда каникулы?')
+# student1.ask_question(reviewer, 'что не так с моим проектом?')
+# student1.ask_question(friend, 'как устроиться на работу питонистом?')
+# student1.ask_question(mentor, 'как устроиться работать питонистом?')
