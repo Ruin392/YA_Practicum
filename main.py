@@ -1,5 +1,6 @@
 # friends_names = ['Аня', 'Коля', 'Лёша', 'Лена', 'Миша']
-# friends_cities = ['Владивосток', 'Красноярск', 'Москва', 'Обнинск', 'Чебоксары']
+# friends_cities = ['Владивосток', 'Красноярск', 'Москва',
+#                   'Обнинск', 'Чебоксары']
 #
 # # Объявлен пустой словарь, его нужно будет наполнить элементами,
 # # каждый из которых составлен по схеме "имя: город"
@@ -68,9 +69,11 @@
 # def is_anyone_in(collection, city):
 #     for friend in collection:
 #         if collection[friend] == city:
-#             print('В городе',city, 'живёт',friend, 'Обязательно зайду в гости!')
+#             print('В городе',city, 'живёт',friend,
+#             'Обязательно зайду в гости!')
 #         else:
-#             print('В городе', collection[friend], 'у меня есть друг, но мне туда не надо.')
+#             print('В городе', collection[friend],
+#             'у меня есть друг, но мне туда не надо.')
 #
 #
 # is_anyone_in(friends, 'Хабаровск')
@@ -89,7 +92,7 @@
 #     if query == 'Сколько у меня друзей?':
 #         count = len(DATABASE)
 #         return 'У тебя ' + str(count) + ' друзей.'
-#     # Здесь проверьте, что переменная query равна строке 'Кто все мои друзья?'
+#
 #     elif query == 'Кто все мои друзья?':
 #         friends_string = ''
 #         friends_string += str('Твои друзья: ')
@@ -188,9 +191,6 @@
 #     res.append(b)
 # print(sorted(set(res), reverse=True)[0])
 # print(sorted(set(res), reverse=True)[1])
-
-
-
 
 # for
 # res = []
@@ -298,13 +298,17 @@
 #
 #
 # # здесь создайте объекты mike и vlad
-# mike = Contact('Михаил Булгаков', '2-03-27', 'Россия, Москва, Большая Пироговская, дом 35б, кв. 6', '15.05.1891')
-# vlad = Contact('Владимир Маяковский', '73-88', 'Россия, Москва, Лубянский проезд, д. 3, кв. 12', '19.07.1893')
+# mike = Contact('Михаил Булгаков', '2-03-27', 'Россия, Москва,
+# Большая Пироговская, дом 35б, кв. 6', '15.05.1891')
+# vlad = Contact('Владимир Маяковский', '73-88', 'Россия, Москва,
+# Лубянский проезд, д. 3, кв. 12', '19.07.1893')
 #
 #
 # def print_contact():
-#     print(f"{mike.name} — адрес: {mike.address}, телефон: {mike.phone}, день рождения: {mike.birthday}")
-#     print(f"{vlad.name} — адрес: {vlad.address}, телефон: {vlad.phone}, день рождения: {vlad.birthday}")
+#     print(f"{mike.name} — адрес: {mike.address}, телефон: {mike.phone},
+#     день рождения: {mike.birthday}")
+#     print(f"{vlad.name} — адрес: {vlad.address}, телефон: {vlad.phone},
+#     день рождения: {vlad.birthday}")
 #
 # # здесь вызовите функцию print_contact(),
 # print_contact()
@@ -318,13 +322,17 @@
 #         print(f"Создаём новый контакт {name}")
 #
 #
-# mike = Contact("Михаил Булгаков", "2-03-27", "15.05.1891", "Россия, Москва, Большая Пироговская, дом 35б, кв. 6")
-# vlad = Contact("Владимир Маяковский", "73-88", "19.07.1893", "Россия, Москва, Лубянский проезд, д. 3, кв. 12")
+# mike = Contact("Михаил Булгаков", "2-03-27", "15.05.1891", "Россия, Москва,
+# Большая Пироговская, дом 35б, кв. 6")
+# vlad = Contact("Владимир Маяковский", "73-88", "19.07.1893", "Россия, Москва,
+# Лубянский проезд, д. 3, кв. 12")
 #
 #
 # def print_contact():
-#     print(f"{mike.name} — адрес: {mike.address}, телефон: {mike.phone}, день рождения: {mike.birthday}")
-#     print(f"{vlad.name} — адрес: {vlad.address}, телефон: {vlad.phone}, день рождения: {vlad.birthday}")
+#     print(f"{mike.name} — адрес: {mike.address}, телефон: {mike.phone},
+#     день рождения: {mike.birthday}")
+#     print(f"{vlad.name} — адрес: {vlad.address}, телефон: {vlad.phone},
+#     день рождения: {vlad.birthday}")
 #
 #
 # # здесь измените адрес для объекта mike
@@ -346,14 +354,18 @@
 #         self.address = address
 #         print(f"Создаём новый контакт {name}")
 #     def show_contact(self):
-#         print(f"{self.name} — адрес: {self.address}, телефон: {self.phone}, день рождения: {self.birthday}")
+#         print(f"{self.name} — адрес: {self.address}, телефон: {self.phone},
+#         день рождения: {self.birthday}")
 #
 #     # def __str__(self):
 #
 #
 #
-# mike = Contact("Михаил Булгаков", "2-03-27", "15.05.1891", "Россия, Москва, Большая Пироговская, дом 35б, кв. 6")
-# vlad = Contact("Владимир Маяковский", "73-88", "19.07.1893", "Россия, Москва, Лубянский проезд, д. 3, кв. 12")
+# mike = Contact("Михаил Булгаков", "2-03-27", "15.05.1891", "Россия, Москва,
+# Большая Пироговская, дом 35б, кв. 6")
+# vlad = Contact("Владимир Маяковский", "73-88", "19.07.1893", "Россия,
+# Москва,
+# Лубянский проезд, д. 3, кв. 12")
 #
 # mike.show_contact()
 # vlad.show_contact()
@@ -369,8 +381,10 @@
 #         self.average_temp_fahrenheit = (temp_celsius * 9/5) + 32
 #
 #     def show_info(self):
-#         print(f"Планета {self.name} имеет площадь поверхности {self.surface_area} кв.км.")
-#         print(f"Средняя температура поверхности планеты: {self.average_temp_fahrenheit} по Фаренгейту.")
+#         print(f"Планета {self.name} имеет площадь
+#         поверхности {self.surface_area} кв.км.")
+#         print(f"Средняя температура поверхности
+#         планеты: {self.average_temp_fahrenheit} по Фаренгейту.")
 #
 #
 # jupiter = Planet('Юпитер', 69911, -108)
@@ -388,7 +402,8 @@
 #
 #     # считаем расстояние между двумя точками в км
 #     def distance(self, other):
-#         cos_d = sin(self.latitude) * sin(other.latitude) + cos(self.latitude) * cos(other.latitude) * cos(
+#         cos_d = sin(self.latitude) * sin(other.latitude) +
+#         cos(self.latitude) * cos(other.latitude) * cos(
 #         self.longitude - other.longitude)
 #
 #         return 6371 * acos(cos_d)
@@ -424,7 +439,9 @@
 # # эта функция печатает расстояние
 # # между двумя любыми наследниками класса Point
 # def print_how_far(geo_object_1, geo_object_2):
-#     print(f'От точки «{geo_object_1.name}» до точки «{geo_object_2.name}» — {geo_object_1.distance(geo_object_2)} км.')
+#     print(f'От точки «{geo_object_1.name}»
+#     до точки «{geo_object_2.name}» — {geo_object_1.distance(geo_object_2)}
+#     км.')
 #
 #
 # # основной код
@@ -495,4 +512,55 @@
 # student1.ask_question(reviewer, 'когда каникулы?')
 # student1.ask_question(reviewer, 'что не так с моим проектом?')
 # student1.ask_question(friend, 'как устроиться на работу питонистом?')
-# student1.ask_question(mentor, 'как устроиться работать питонистом?')
+# student1.ask_question(mentor, 'как устроиться работать питонистом?')-
+# from math import sqrt
+#
+#
+# message = 'Добро пожаловать в самую лучшую программу для вычисления ' \
+#           'квадратного корня из заданного числа'
+#
+#
+# def calculatesquareroot(number):
+#     """ Вычисляет квадратный корень"""
+#     return sqrt(number)
+#
+#
+# def calc(your_number):
+#     if your_number <= 0:
+#         return
+#     print(
+#         f"Мы вычислили корень квадратный из введенного вами числа. "
+#         f"Это будет: {calculatesquareroot(your_number)}")
+#
+#
+# print(message)
+# calc(25.5)
+
+class Contact:
+    def __init__(self,
+                 name,
+                 year_birth,
+                 is_programmer):
+        self.name = name
+        self.year_birth = year_birth
+        self.is_programmer = is_programmer
+
+    def age_define(self):
+        if 1946 < self.year_birth < 1980:
+            return 'Олдскул'
+        if self.year_birth >= 1980:
+            return 'Молодой'
+        return 'Старейшина'
+
+    def programmer_define(self):
+        if self.is_programmer:
+            return 'Программист'
+        return 'Нормальный'
+
+    def show_contact(self):
+        return(f'{self.name}, '
+               f'категория: {self.age_define()}, '
+               f'статус: {self.programmer_define()}')
+
+    def print_contact(self):
+        print(self.show_contact())
