@@ -571,3 +571,34 @@
 #         print(self.show_contact())
 # a = Contact('Мария', 1999, 777)
 # print(a.show_contact())
+# from typing import Sequence
+# def lower_join(seq: Sequence[str]) -> str:
+#     """Принимает на вход последовательность и создаёт из неё
+#     строку в нижнем регистре."""
+#     return str(''.join(seq).lower())
+# from typing import List, Any, Union
+# def series_sum(incoming: List[Union[str, float]]) -> str:
+#     """Принимает на вход список из строк и чисел с плавающей точкой, приводит его элементы к строкам и конкатенирует их.
+#     """
+#     result = ''
+#     for i in incoming:
+#         result += str(i)
+#     return result
+#
+# print(series_sum(['a', 1]))
+# from typing import Optional, Callable
+# def add(number: Optional[int], callback: Callable[[float], float]) -> str:
+#     """Производит арифметические действия с числами.
+#     Принимает число и функцию, выполняющую арифметическое действие.
+#     """
+#     return callback(number)
+#
+#
+# def adder20(number) -> str:
+#     """Добавляет к аргументу 20."""
+#     return number + 20
+#
+#
+# def multiplier2(number):
+#     """Умножает аргумент на 2."""
+#     return number * 2
